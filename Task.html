@@ -21,7 +21,7 @@
                             <div class="form-row align-items-center">
                               <div class="col-auto my-1">
                                 <label class="mr-sm-2" for="inlineFormCustomSelect">Month</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <select class="custom-select mr-sm-2" id="monthId">
                                   <option selected>Month</option>
                                   <option value="1">January</option>
                                   <option value="2">February</option>
@@ -38,10 +38,10 @@
                                 </select>
                               </div>
 
-                              <div class="col-auto my-1">7
+                              <div class="col-auto my-1">
                                 <label class="mr-sm-2" for="inlineFormCustomSelect">Day</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                  <option selected>Day</option>
+                                <select class="custom-select mr-sm-2" id="dayId">
+                                   <option selected>Day</option>
                                   <option value="1">1st</option>
                                   <option value="2">2nd</option>
                                   <option value="3">3rd</option>
@@ -78,15 +78,15 @@
 
                               <div class="col-auto my-1">
                                 <label class="mr-sm-2" for="inlineFormCustomSelect">Year</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                  <option selected>2020</option>
-                                
+                                <select class="custom-select mr-sm-2" id="yearId">
+                                  <option selected>Year</option>
+                                  <option value="1">2020</option>
                                 </select>
                               </div>
 
                               <div class="col-auto my-1">
                                 <label class="mr-sm-2" for="inlineFormCustomSelect">Hour</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <select class="custom-select mr-sm-2" id="hourId">
                                   <option selected>Hour</option>
                                   <option value="1">1AM</option>
                                   <option value="2">2AM</option>
@@ -118,7 +118,7 @@
 
                               <div class="col-auto my-1">
                                 <label class="mr-sm-2" for="inlineFormCustomSelect">Minute</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <select class="custom-select mr-sm-2" id="minuteId">
                                   <option selected>Minute</option>
                                   <option value="0">0min</option>
                                   <option value="1">1min</option>
@@ -186,7 +186,7 @@
 
                               <div class="col-auto my-1">
                                 <label class="mr-sm-2" for="inlineFormCustomSelect">Second</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <select class="custom-select mr-sm-2" id="secondId">
                                   <option selected>Second</option>
                                   <option value="0">0s</option>
                                   <option value="1">1s</option>
@@ -255,9 +255,14 @@
                               
                             </div>
                                 <div class="col-auto my-1 ">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button id="addEvent" type="button" class="btn btn-primary">Submit</button>
                                 </div>
                           </form>
+
+                          <ul class="list-group" id="EventList" >
+                              <p></p>
+                              <h3>EventList</h3>
+                          </ul>
                          
                     </div>
                 </div>
