@@ -31,7 +31,8 @@ const baseURL = 'https://json-db-data.herokuapp.com';
         
         
         //add data to server
-        $.post(baseURL+ '/Event', postData ,function(data,staus){
+        $.post(baseURL+ '/Event', postData ,function(data,status){
+            
             if(status === 'success'){
                 addItemToEvent(data.id,data);
                 
