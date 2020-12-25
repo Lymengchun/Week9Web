@@ -12,21 +12,12 @@ const baseURL = 'https://json-db-data.herokuapp.com';
 
     //add event from button
     $('#addEvent').click(function(){
-        var Month = $('#monthId option:selected').text();
-        var Day = $('#dayId option:selected').text();
-        var Year = $('#yearId option:selected').text();
-        var Hour = $('#hourId option:selected').text();
-        var Minute = $('#minuteId option:selected').text();
-        var Second = $('#secondId option:selected').text();
+        var Title = $('#EventNameId').val();
+        
 
         
         const postData = {
-            day: Day,
-            month: Month,
-            year: Year,
-            hour: Hour,
-            minute: Minute,
-            second: Second
+            titleTask: Title
         };
         
         
@@ -56,7 +47,9 @@ const baseURL = 'https://json-db-data.herokuapp.com';
         if(status === 'success'){
             $.each(data, function(key,data){
                 
-                addItemToEvent('<li class="list-group-item">Date:&nbsp'+data.day+'&nbsp'+data.month+'&nbsp'+data.year+'&nbspHour:'+data.hour+'&nbsp:'+data.minute+'&nbsp:'+data.second+'<button type="button" class="btn btn-link">Edit</button> <button id="btDelete" type="button" class="btn btn-link">Delete</button></li>');
+                addItemToEvent('<li  class="list-group-item " >'+data.titleTask+'<button type="button" class="btn btn-link">Edit</button> <button id="btDelete" type="button" class="btn btn-link">Delete</button></li>');
+ 
+                
             })
         }else{
             console.log('Could not load data from server');
@@ -65,11 +58,7 @@ const baseURL = 'https://json-db-data.herokuapp.com';
     });
 
 
-    //delete event
-    $('#btDelete').click(function(){
-        
-        console.log('Hello');
-    });
+   
    
 });
 
