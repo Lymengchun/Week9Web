@@ -25,8 +25,20 @@ const baseURL = 'https://json-db-data.herokuapp.com';
         $.post(baseURL+ '/Event', postData ,function(data,status){
             
             if(status === 'success'){
-                addItemToEvent(data.id,data);
+                addItemToEvent('<li  id='+data.id+'  class="list-group-item " >'+data.titleTask+'<button type="button" class="btn btn-link ">Edit</button> <button type="button" class="btn btn-link delete">Delete</button></li>');    
+                $(".delete").click(function(){
+
+                    $.ajax({
+                        url: baseURL+"/Event/"+ $(this).parent().attr("id"),
+                        type: 'DELETE',
+                        success: function(result) {
+                           
+                        }
+                    })
+                   
+                    $(this).parent().remove();
                 
+                   });
             }else{
                 console.log('Could not load data from server');
             }
@@ -47,25 +59,30 @@ const baseURL = 'https://json-db-data.herokuapp.com';
         if(status === 'success'){
             $.each(data, function(key,data){
                 
-                addItemToEvent('<li  class="list-group-item " >'+data.titleTask+'<button type="button" class="btn btn-link">Edit</button> <button id="btDelete"+'+data.id+' type="button" class="btn btn-link">Delete</button></li>');
-                
-                
+                addItemToEvent('<li  id='+data.id+'  class="list-group-item " >'+data.titleTask+'<button type="button" class="btn btn-link ">Edit</button> <button type="button" class="btn btn-link delete">Delete</button></li>');    
                 
             }
-            
             )
+            $(".delete").click(function(){
+
+                $.ajax({
+                    url: baseURL+"/Event/"+ $(this).parent().attr("id"),
+                    type: 'DELETE',
+                    success: function(result) {
+                       
+                    }
+                })
+               
+                $(this).parent().remove();
+            
+               });
         }else{
             console.log('Could not load data from server');
         }
         
     });
 
-    $('#btDelete').click(function(){
-
-        console.log();
-        
- 
-    });
+    
     
    
 
