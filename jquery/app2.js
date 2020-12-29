@@ -47,7 +47,6 @@ const baseURL = 'https://json-db-data.herokuapp.com';
         
 
     });
-
     //Mark as done
     // $('#EventList').on('click','.mark-ask-done',function(){
 
